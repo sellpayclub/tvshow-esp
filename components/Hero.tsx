@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
           </p>
         </div>
 
-        {/* Main Image with Spotlight */}
+        {/* Main Image with Spotlight - Optimized for LCP */}
         <div className="relative my-12 group perspective-1000">
           <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10"></div>
           {/* Image Glow */}
@@ -32,6 +32,9 @@ const Hero: React.FC = () => {
           <img 
             src="https://cdn.shopify.com/s/files/1/0706/9512/5188/files/tv3.png?v=1749096198" 
             alt="TV Show Interface" 
+            fetchPriority="high"
+            loading="eager"
+            decoding="async"
             className="relative z-0 max-w-full h-auto mx-auto drop-shadow-2xl transition-transform duration-500 hover:scale-[1.01]"
           />
         </div>
@@ -43,15 +46,15 @@ const Hero: React.FC = () => {
         {/* Video Container - Dark Glass Style */}
         <div className="max-w-4xl mx-auto rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.5)] mb-12 bg-black/50 backdrop-blur-sm relative">
            <div className="absolute inset-0 border-2 border-white/5 rounded-2xl pointer-events-none z-20"></div>
-           <VideoPlayer id="69931b677a04c8d380dd5df2" />
+           <VideoPlayer id="69931b677a04c8d380dd5df2" lazy={true} />
         </div>
 
         <div className="flex flex-col items-center gap-8">
           <div className="flex items-center gap-3 px-6 py-3 bg-white/5 rounded-full border border-white/5 backdrop-blur-md">
              <div className="flex -space-x-3">
-                <img className="w-10 h-10 rounded-full border-2 border-black object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&h=100" alt="Cliente 1" />
-                <img className="w-10 h-10 rounded-full border-2 border-black object-cover" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&h=100" alt="Cliente 2" />
-                <img className="w-10 h-10 rounded-full border-2 border-black object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&h=100" alt="Cliente 3" />
+                <img loading="lazy" className="w-10 h-10 rounded-full border-2 border-black object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&h=100" alt="Cliente 1" />
+                <img loading="lazy" className="w-10 h-10 rounded-full border-2 border-black object-cover" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&h=100" alt="Cliente 2" />
+                <img loading="lazy" className="w-10 h-10 rounded-full border-2 border-black object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&h=100" alt="Cliente 3" />
              </div>
              <span className="text-white font-medium">
                <strong className="text-green-400">+ 100 mil</strong> clientes utilizan TV SHOW

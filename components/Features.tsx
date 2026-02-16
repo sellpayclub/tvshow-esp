@@ -37,6 +37,8 @@ const Features: React.FC = () => {
             <img 
               src="https://cdn.shopify.com/s/files/1/0503/6045/1268/t/6/assets/cel-tvshow-1657461898771.png?v=1657461901"
               alt="Mobile App Mockup"
+              loading="lazy"
+              decoding="async"
               className="relative w-full max-w-md mx-auto animate-float drop-shadow-2xl z-10"
             />
           </div>

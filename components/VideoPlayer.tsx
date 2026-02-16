@@ -2,9 +2,10 @@ import React from 'react';
 
 interface VideoPlayerProps {
   id: string;
+  lazy?: boolean;
 }
 
-const VideoPlayer: React.FC<VideoPlayerProps> = ({ id }) => {
+const VideoPlayer: React.FC<VideoPlayerProps> = ({ id, lazy = true }) => {
   // Construct the src dynamically as per the provided script logic to work within React
   // src='https://scripts.converteai.net/ceaefeeb-feef-4b52-8911-9ec9de0d5b6b/players/69931b677a04c8d380dd5df2/v4/embed.html' +(location.search||'?') +'&vl=' +encodeURIComponent(location.href)
   
@@ -18,6 +19,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ id }) => {
           allowFullScreen
           src={src}
           id={`ifr_${id}`}
+          loading={lazy ? "lazy" : "eager"}
           style={{
             position: 'absolute',
             top: 0,

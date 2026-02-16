@@ -6,15 +6,29 @@ const ContentCard: React.FC<{
   img: string;
   desc: string;
 }> = ({ title, img, desc }) => (
-  <div className="group relative rounded-3xl overflow-hidden bg-[#0a0a0a] border border-white/10 hover:border-white/20 transition-all duration-300">
-    <div className="aspect-video w-full overflow-hidden">
-      <img src={img} alt={title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90"></div>
+  <div className="group flex flex-col h-full bg-[#111] border border-white/10 rounded-3xl overflow-hidden hover:border-green-500/30 hover:shadow-[0_0_30px_rgba(34,197,94,0.1)] transition-all duration-300">
+    {/* 1. Title Area */}
+    <div className="p-6 pb-4 bg-[#161616]">
+      <h3 className="text-xl md:text-2xl font-black text-white leading-tight uppercase tracking-tight min-h-[3rem] flex items-center">
+        {title}
+      </h3>
+    </div>
+
+    {/* 2. Image Area */}
+    <div className="w-full aspect-video overflow-hidden relative border-y border-white/5">
+      <div className="absolute inset-0 bg-green-500/0 group-hover:bg-green-500/10 z-10 transition-colors duration-300"></div>
+      <img 
+        src={img} 
+        alt={title}
+        loading="lazy"
+        decoding="async"
+        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out" 
+      />
     </div>
     
-    <div className="absolute bottom-0 left-0 w-full p-8">
-      <h3 className="text-xl md:text-2xl font-bold text-white mb-2">{title}</h3>
-      <p className="text-gray-200 text-sm leading-relaxed max-w-sm">
+    {/* 3. Description Area */}
+    <div className="p-6 pt-5 flex-grow bg-[#111]">
+      <p className="text-gray-300 text-sm md:text-base leading-relaxed font-light">
         {desc}
       </p>
     </div>
@@ -31,7 +45,13 @@ const ContentShowcase: React.FC = () => {
           SERVICIOS DE STREAMING GRATUITOS
         </h2>
         <div className="relative z-10 flex justify-center mb-8 px-4">
-           <img src="https://cdn.shopify.com/s/files/1/0652/7880/4220/t/2/assets/captura-de-tela-20220713-as-111928-1657721971327.png?v=1657721976" alt="Streaming Logos" className="max-w-full md:max-w-3xl rounded-xl opacity-90 hover:opacity-100 transition-opacity" />
+           <img 
+             src="https://cdn.shopify.com/s/files/1/0652/7880/4220/t/2/assets/captura-de-tela-20220713-as-111928-1657721971327.png?v=1657721976" 
+             alt="Streaming Logos" 
+             loading="lazy"
+             decoding="async"
+             className="max-w-full md:max-w-3xl rounded-xl opacity-90 hover:opacity-100 transition-opacity" 
+           />
         </div>
         <p className="relative z-10 text-xl text-gray-100 max-w-2xl mx-auto">
           Acceso a todas. Series y películas de Netflix, HBO, Amazon Prime, Disney y mucho más, ¡todo disponible directamente en el sistema!
@@ -44,7 +64,13 @@ const ContentShowcase: React.FC = () => {
          
          <div className="flex flex-col md:flex-row items-center gap-12 relative z-10">
             <div className="w-full md:w-1/2">
-               <img src="https://cdn.shopify.com/s/files/1/0503/6045/1268/t/6/assets/tv-show-netflix-1657463476282.png?v=1657463501" alt="Web Platform" className="w-full drop-shadow-2xl transform hover:scale-105 transition-transform duration-500" />
+               <img 
+                 src="https://cdn.shopify.com/s/files/1/0503/6045/1268/t/6/assets/tv-show-netflix-1657463476282.png?v=1657463501" 
+                 alt="Web Platform" 
+                 loading="lazy"
+                 decoding="async"
+                 className="w-full drop-shadow-2xl transform hover:scale-105 transition-transform duration-500" 
+               />
             </div>
             <div className="w-full md:w-1/2">
                <h3 className="text-3xl font-bold text-white mb-6">VÍSTELO TAMBIÉN ONLINE DIRECTAMENTE EN TU ORDENADOR</h3>
@@ -60,11 +86,11 @@ const ContentShowcase: React.FC = () => {
         <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full"></div>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-6 mb-16">
+      <div className="grid md:grid-cols-2 gap-8 mb-16">
         <ContentCard 
-          title="PELÍCULAS ESTRENOS DE CINE EN PRIMERA PERSONA"
+          title="PELÍCULAS ESTRENOS DE CINE"
           img="https://cdn.shopify.com/s/files/1/0503/6045/1268/t/6/assets/filmes-1659740661491.png?v=1659740663"
-          desc="Todas las películas que aún están en cartelera se añaden cada semana en calidad HD y FULL HD."
+          desc="Todas las películas que aún están en cartelera se añaden cada semana en calidad HD y FULL HD. ¡Cine en casa!"
         />
         <ContentCard 
           title="TODOS LOS CANALES DE DEPORTES ⚽️"

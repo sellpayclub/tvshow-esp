@@ -6,13 +6,25 @@ const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, ans
 
   return (
     <div className="border border-white/5 rounded-xl bg-white/[0.02] overflow-hidden transition-all hover:bg-white/[0.04]">
-      <button
-        className="w-full py-5 px-6 flex justify-between items-center text-left"
-        onClick={() => setIsOpen(!isOpen)}
+      <div
+        role="button"
+        tabIndex={0}
+        className="w-full py-5 px-6 flex justify-between items-center text-left cursor-pointer outline-none focus:bg-white/5"
+        onClick={(e) => {
+          e.stopPropagation();
+          setIsOpen(!isOpen);
+        }}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            e.stopPropagation();
+            setIsOpen(!isOpen);
+          }
+        }}
       >
         <span className="font-bold text-lg text-white">{question}</span>
         {isOpen ? <ChevronUp className="text-green-400" /> : <ChevronDown className="text-white" />}
-      </button>
+      </div>
       <div 
         className={`transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
       >
