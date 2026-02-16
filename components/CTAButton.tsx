@@ -10,7 +10,7 @@ interface CTAButtonProps {
 
 const CTAButton: React.FC<CTAButtonProps> = ({ 
   text = "¡QUIERO MI ACCESO!", 
-  url = "https://sellpay.thrivecart.com/tv-showplan2/",
+  url = "https://pay.hotmart.com/H104478089D",
   className = "",
   fullWidth = false
 }) => {

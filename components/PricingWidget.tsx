@@ -157,7 +157,7 @@ const PricingWidget: React.FC = () => {
             )}
 
             <a 
-              href="https://sellpay.thrivecart.com/tv-showplan2/"
+              href="https://pay.hotmart.com/H104478089D"
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full py-4 bg-white text-black font-black text-lg uppercase tracking-wide rounded-xl hover:bg-gray-200 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.3)] text-center"
