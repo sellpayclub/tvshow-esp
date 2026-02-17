@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ShieldCheck, Globe } from 'lucide-react';
 
 // Configuration
-const PRECIO_BASE_USD = 29;
+const PRECIO_BASE_USD = 15;
 const MARKUP = 1.67;
 
 interface CurrencyInfo {
