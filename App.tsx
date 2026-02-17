@@ -9,11 +9,14 @@ import Compatibility from './components/Compatibility';
 import Footer from './components/Footer';
 
 const App: React.FC = () => {
-  // Logic to handle "duplicate" page behavior
-  // If the URL is /tv2, use the Thrivecart link.
-  // Otherwise, default to the original Hotmart link defined in PricingWidget default props.
-  const path = window.location.pathname;
-  const isTV2 = path.startsWith('/tv2');
+  // Lógica para detectar a página TV2
+  // Verificamos tanto o caminho (/tv2) quanto parâmetros (?tv2) para garantir que funcione
+  // Convertemos para minúsculas para evitar erros de digitação
+  const path = window.location.pathname.toLowerCase();
+  const search = window.location.search.toLowerCase();
+  
+  // Se tiver 'tv2' no link ou nos parâmetros, ativa o link da Thrivecart
+  const isTV2 = path.includes('/tv2') || search.includes('tv2');
   
   const checkoutUrl = isTV2 
     ? "https://sellpay.thrivecart.com/tvshow/" 
