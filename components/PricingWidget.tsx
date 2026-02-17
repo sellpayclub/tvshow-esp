@@ -36,7 +36,13 @@ const MONEDAS: Record<string, CurrencyInfo> = {
   GB:{codigo:'GBP',tasa:0.81, nombre:'United Kingdom',  locale:'en-GB', bandera:'🇬🇧'}
 };
 
-const PricingWidget: React.FC = () => {
+interface PricingWidgetProps {
+  checkoutUrl?: string;
+}
+
+const PricingWidget: React.FC<PricingWidgetProps> = ({ 
+  checkoutUrl = "https://pay.hotmart.com/H104478089D" 
+}) => {
   const [selectedCountry, setSelectedCountry] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -157,7 +163,7 @@ const PricingWidget: React.FC = () => {
             )}
 
             <a 
-              href="https://pay.hotmart.com/H104478089D"
+              href={checkoutUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full py-4 bg-white text-black font-black text-lg uppercase tracking-wide rounded-xl hover:bg-gray-200 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.3)] text-center"
