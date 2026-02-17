@@ -5,6 +5,7 @@ import ContentShowcase from './components/ContentShowcase';
 import Testimonials from './components/Testimonials';
 import PricingWidget from './components/PricingWidget';
 import FAQ from './components/FAQ';
+import Compatibility from './components/Compatibility';
 import Footer from './components/Footer';
 
 const App: React.FC = () => {
@@ -16,6 +17,7 @@ const App: React.FC = () => {
       <Testimonials />
       <PricingWidget />
       <FAQ />
+      <Compatibility />
       <Footer />
     </div>
   );
