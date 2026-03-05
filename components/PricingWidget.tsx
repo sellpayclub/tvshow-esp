@@ -107,20 +107,26 @@ const PricingWidget: React.FC<PricingWidgetProps> = ({
 
       <div className="relative z-10 w-full max-w-lg">
 
-        {/* Country Selector - Minimalist */}
-        <div className="flex justify-center mb-8">
-          <div className="inline-flex items-center bg-white/5 border border-white/10 rounded-full px-4 py-2 backdrop-blur-md hover:bg-white/10 transition-colors">
-            <Globe size={16} className="text-white mr-2" />
+        {/* Country Selector - Highlighted */}
+        <div className="flex flex-col items-center justify-center mb-8 relative z-20">
+          <p className="text-green-400 font-bold mb-3 text-sm animate-pulse flex items-center">
+            <span className="mr-2">👇</span>¿No es tu país? Cámbialo aquí<span className="ml-2">👇</span>
+          </p>
+          <div className="relative inline-flex items-center bg-black/40 border-2 border-green-500/60 rounded-full px-6 py-3 backdrop-blur-md hover:bg-green-900/20 hover:border-green-400 hover:shadow-[0_0_20px_rgba(34,197,94,0.4)] transition-all duration-300 shadow-[0_0_15px_rgba(34,197,94,0.2)] cursor-pointer group">
+            <Globe size={22} className="text-green-400 mr-3 group-hover:scale-110 transition-transform" />
             <select
               value={selectedCountry}
               onChange={(e) => setSelectedCountry(e.target.value)}
-              className="bg-transparent text-sm text-white focus:outline-none cursor-pointer"
+              className="bg-transparent text-base font-bold text-white focus:outline-none cursor-pointer appearance-none pr-8 w-full"
             >
               <option value="" className="bg-black">Auto-detectar</option>
               {Object.entries(MONEDAS).map(([code, info]) => (
                 <option key={code} value={code} className="bg-black text-white">{info.nombre}</option>
               ))}
             </select>
+            <div className="absolute right-5 pointer-events-none text-green-400 group-hover:translate-y-0.5 transition-transform">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7"></path></svg>
+            </div>
           </div>
         </div>
 
