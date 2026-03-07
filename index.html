@@ -31,7 +31,7 @@
     !function (f, b, e, v, n, t, s) {
       if (f.fbq) return; n = f.fbq = function () {
         n.callMethod ?
-        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
       };
       if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
       n.queue = []; t = b.createElement(e); t.async = !0;
@@ -91,18 +91,33 @@
       }
     }
   </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@^19.2.4",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-    "react/": "https://esm.sh/react@^19.2.4/",
-    "lucide-react": "https://esm.sh/lucide-react@^0.564.0",
-    "vite": "https://esm.sh/vite@^7.3.1",
-    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.4"
-  }
-}
-</script>
+
+  <!-- Script para repassar UTMs para os links de Checkout -->
+  <script>
+    (function () {
+      function appendUrlParamsToLinks() {
+        var searchParams = window.location.search;
+        if (searchParams) {
+          var links = document.querySelectorAll('a');
+          for (var i = 0; i < links.length; i++) {
+            var link = links[i];
+
+            if (link.href.includes('sellpay')) {
+              var hash = link.hash;
+              var hrefWithoutHash = link.href.split('#')[0];
+              var separator = hrefWithoutHash.indexOf('?') !== -1 ? '&' : '?';
+              var query = searchParams.substring(1);
+              link.href = hrefWithoutHash + separator + query + hash;
+            }
+          }
+        }
+      }
+
+      appendUrlParamsToLinks();
+      window.addEventListener('load', appendUrlParamsToLinks);
+    })();
+  </script>
+
 </head>
 
 <body>
