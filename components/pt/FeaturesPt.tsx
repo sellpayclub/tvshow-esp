@@ -11,7 +11,7 @@ const FeaturesPt: React.FC = () => {
         {
             icon: <DollarSign size={32} className="text-green-400" />,
             title: "Pagamento Acessível",
-            desc: "Escolha entre pagamento ÚNICO de R$ 147 ou o plano mensal de apenas R$ 15/mês. O sistema é seu para instalar onde quiser!"
+            desc: "Escolha entre pagamento ÚNICO de R$ 104 ou o plano mensal de apenas R$ 20/mês. O sistema é seu para instalar onde quiser!"
         },
         {
             icon: <RefreshCw size={32} className="text-blue-400" />,

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ShieldCheck, Globe } from 'lucide-react';
 
 // Configuration
-const PRECIO_BASE_USD = 15;
+const PRECIO_BASE_USD = 20;
 const MARKUP = 1.67;
 
 interface CurrencyInfo {
@@ -181,6 +181,7 @@ const PricingWidget: React.FC<PricingWidgetProps> = ({
               <p className="text-sm text-white font-bold">PAGO ÚNICO</p>
               <p className="text-xs text-white">✅ Canales y películas para ADULTOS INCLUIDOS</p>
               <p className="text-xs text-white">✅ Pantallas múltiples, ¡colócalo en todos los televisores que quieras! (sin límites)</p>
+              <p className="text-xs text-gray-300 mt-3 bg-white/5 rounded-lg px-3 py-2 border border-white/10">💱 En la página de pago, el precio se mostrará automáticamente en la moneda de tu país.</p>
             </div>
           </div>
         </div>

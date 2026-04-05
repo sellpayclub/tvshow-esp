@@ -40,7 +40,7 @@ const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, ans
 const FAQPt: React.FC = () => {
     const faqs = [
         { q: "PRECISA DE INTERNET PARA FUNCIONAR?", a: "Sim, é necessário ter uma conexão de internet estável de pelo menos 10MB para aproveitar o conteúdo em alta qualidade sem interrupções." },
-        { q: "COMO FUNCIONA O PAGAMENTO?", a: "Você pode escolher entre o pagamento ÚNICO de R$ 147 (acesso vitalício) ou o plano mensal de R$ 15/mês. Não há taxas ocultas." },
+        { q: "COMO FUNCIONA O PAGAMENTO?", a: "Você pode escolher entre o pagamento ÚNICO de R$ 104 (acesso vitalício) ou o plano mensal de R$ 20/mês. Não há taxas ocultas." },
         { q: "QUANTOS CANAIS LIBERA?", a: "Você terá acesso a mais de 12.000 canais ao vivo, além de milhares de filmes e séries on-demand." },
         { q: "COMO VOU RECEBER?", a: "Imediatamente após confirmar o pagamento, você receberá um e-mail com seus dados de acesso e as instruções simples de instalação." },
         { q: "PRECISA DE UM TÉCNICO PARA CONFIGURAR?", a: "Não, a instalação é muito intuitiva. Enviamos um passo a passo detalhado que qualquer pessoa pode seguir em poucos minutos." },
