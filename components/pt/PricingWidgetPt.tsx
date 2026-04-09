@@ -7,8 +7,8 @@ interface PricingWidgetPtProps {
 }
 
 const PricingWidgetPt: React.FC<PricingWidgetPtProps> = ({
-    checkoutUrlUnico = "https://pay.hotmart.com/H104478089D",
-    checkoutUrlMensal = "https://pay.hotmart.com/H104478089D"
+    checkoutUrlUnico = "https://pay.hotmart.com/J105308818M",
+    checkoutUrlMensal = "https://pay.hotmart.com/J105308818M"
 }) => {
     const [planType, setPlanType] = useState<'unico' | 'mensal'>('unico');
 
