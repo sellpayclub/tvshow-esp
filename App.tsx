@@ -9,7 +9,7 @@ import Compatibility from './components/Compatibility';
 import Footer from './components/Footer';
 
 const App: React.FC = () => {
-  const checkoutUrl = "https://pay.hotmart.com/J105308818M";
+  const checkoutUrl = "https://go.centerpag.com/PPU38CQA908";
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden selection:bg-green-500 selection:text-black">

@@ -41,7 +41,7 @@ interface PricingWidgetProps {
 }
 
 const PricingWidget: React.FC<PricingWidgetProps> = ({
-  checkoutUrl = "https://pay.hotmart.com/J105308818M"
+  checkoutUrl = "https://go.centerpag.com/PPU38CQA908"
 }) => {
   const [selectedCountry, setSelectedCountry] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(true);

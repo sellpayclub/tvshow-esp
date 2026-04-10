@@ -112,7 +112,7 @@
           for (var i = 0; i < links.length; i++) {
             var link = links[i];
 
-            if (link.href.includes('hotmart')) {
+            if (link.href.includes('hotmart') || link.href.includes('centerpag')) {
               var hash = link.hash;
               var hrefWithoutHash = link.href.split('#')[0];
               var separator = hrefWithoutHash.indexOf('?') !== -1 ? '&' : '?';
