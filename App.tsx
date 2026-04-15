@@ -28,12 +28,16 @@ const App: React.FC = () => {
 
   let headline = undefined;
   let subheadline = undefined;
+  let headlineClassName = undefined;
+  let subheadlineClassName = undefined;
 
   if (isSlug1) {
+    headlineClassName = "text-2xl md:text-4xl lg:text-5xl";
+    subheadlineClassName = "text-base md:text-xl";
     headline = (
       <>
-        ¡YA NO TIENES QUE PAGAR POR SERVICIOS DE STREAMING NI SUSCRIPCIONES DE <br/>
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 animate-pulse-slow">
+        ¡YA NO TIENES QUE PAGAR POR SERVICIOS DE STREAMING NI SUSCRIPCIONES DE <br className="hidden md:block" />
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 animate-pulse-slow block mt-2">
           TELEVISIÓN POR CABLE POR SEPARADO!
         </span>
       </>
@@ -44,10 +48,12 @@ const App: React.FC = () => {
       </>
     );
   } else if (isSlug2) {
+    headlineClassName = "text-2xl md:text-4xl lg:text-5xl";
+    subheadlineClassName = "text-base md:text-xl";
     headline = (
       <>
-        ¡DESBLOQUEA TU TV HOY Y OBTÉN ACCESO ILIMITADO A TODOS LOS SERVICIOS DE STREAMING Y <br/>
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 animate-pulse-slow">
+        ¡DESBLOQUEA TU TV HOY Y OBTÉN ACCESO ILIMITADO A TODOS LOS SERVICIOS DE STREAMING Y <br className="hidden md:block" />
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 animate-pulse-slow block mt-2">
           TODOS LOS CANALES DE CABLE!
         </span>
       </>
@@ -61,7 +67,12 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden selection:bg-green-500 selection:text-black">
-      <Hero headline={headline} subheadline={subheadline} />
+      <Hero 
+        headline={headline} 
+        subheadline={subheadline} 
+        headlineClassName={headlineClassName}
+        subheadlineClassName={subheadlineClassName}
+      />
       <Features />
       <ContentShowcase />
       <Testimonials />

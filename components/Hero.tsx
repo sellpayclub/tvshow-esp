@@ -5,9 +5,11 @@ import VideoPlayer from './VideoPlayer';
 interface HeroProps {
   headline?: React.ReactNode;
   subheadline?: React.ReactNode;
+  headlineClassName?: string;
+  subheadlineClassName?: string;
 }
 
-const Hero: React.FC<HeroProps> = ({ headline, subheadline }) => {
+const Hero: React.FC<HeroProps> = ({ headline, subheadline, headlineClassName, subheadlineClassName }) => {
   return (
     <section className="relative pt-12 pb-24 px-4 overflow-hidden">
       {/* Ambient Background Glows */}
@@ -16,7 +18,7 @@ const Hero: React.FC<HeroProps> = ({ headline, subheadline }) => {
 
       <div className="relative z-10 max-w-6xl mx-auto text-center">
         <div className="mb-10 space-y-6">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight tracking-tight">
+          <h1 className={`font-black text-white leading-tight tracking-tight ${headlineClassName || 'text-4xl md:text-6xl lg:text-7xl'}`}>
             {headline || (
               <>
                 ¡DEJA DE PAGAR MUCHO <br/>
@@ -27,7 +29,7 @@ const Hero: React.FC<HeroProps> = ({ headline, subheadline }) => {
             )}
           </h1>
           
-          <p className="text-lg md:text-2xl text-gray-100 max-w-3xl mx-auto font-light leading-relaxed">
+          <p className={`text-gray-100 max-w-3xl mx-auto font-light leading-relaxed ${subheadlineClassName || 'text-lg md:text-2xl'}`}>
             {subheadline || (
               <>
                 Más de <strong className="text-white">12 000 canales</strong> abiertos y cerrados, Netflix, Amazon Prime, Disney y mucho más.
